@@ -1,10 +1,11 @@
-﻿from math import*
-from random import*
 from OmaModul import *
+
 
 logt=["User1", "User2"]
 pas=["s1mple", "juppi"]
 while True:
+    print(logt)
+    print(pas)
     a=str(input("Вы хотите войти в систему? ")) #yas/no
     if a=="yas":
         print("Авторизуйтесь")
@@ -18,26 +19,18 @@ while True:
             print("")
 
 
-    else: 
-        a=="no"
-        b=str(input("Вы хотите регнутся? "))
-        if b=="yas":
-            print("Регистрация")
-            b1=str(input("Автоматическое создание пароля: "))
-            b1=="yas"
-            spin=salasõna
-            print("Пароль:", spin)
-
-            #b1=="no"
-            #if b2=str(input("Cамостоятельное создание пароля")):
-            #print()
-        else:
-            b=="no"
-            c=str(input("Закончить работу? ")) #ainult yas
-            if c=="yas":
-                print("Конец") 
-                break
-
+    elif a=="no":
+         b=str(input("Вы хотите регнутся? "))
+         b=="yas"
+         print("Регистрация")
+         logt,pas=reg(logt,pas)
+    else:
+         b=="no"
+         c=str(input("Закончить работу? ")) #ainult yas
+         if c=="yas":
+            print("Конец") 
+            break
+       
 
 
 
