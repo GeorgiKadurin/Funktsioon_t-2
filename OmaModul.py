@@ -1,3 +1,5 @@
+
+
 from random import *
 #def salasõna(k:int)->bool:
 #    """
@@ -57,3 +59,37 @@ def reg(logt:list, pas:str)->bool:
 
 
 
+#def repass(pas:str, login:str, pas_o:str, pas_n:str)->str:
+    """
+    Määrme repass...
+    :parem pas str, login str, pas_o str, pas_n str:Järjend repass 
+    :rtype: str
+    """
+   
+    #username = input("Введите имя пользователя: ")
+    #old_password = input("Введите старый пароль: ")
+    #new_password = input("Введите новый пароль: ")
+    #reset_password(logt, pasw, username, old_password, new_password)
+
+    #if login in logt and pas_o in pas:
+    #    index = logt.index(login)
+    #    pas[index] = pas_n
+        
+    #    print("Пароль был изменен.")
+     
+
+#def reepasss(passw:int, user:int,logt:int)->str:
+     """
+    Määrme reepasss
+    :parem ppassw:int, user:int,logt:int:Järjend reepasss
+    :rtype: str
+    """
+    #if user in logt:
+    #    index = logt.index(user)
+    #    new_pass = Salasona()
+    #    passw[index] = new_pass
+    #    print(f"Новый пароль для пользователя {user}: {new_pass}")
+    #else:
+    #    print("Пользователь с таким именем не найден.")
+
+    #return 
