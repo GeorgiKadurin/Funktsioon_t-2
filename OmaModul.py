@@ -1,5 +1,3 @@
-
-
 from random import *
 #def salasõna(k:int)->bool:
 #    """
@@ -59,37 +57,51 @@ def reg(logt:list, pas:str)->bool:
 
 
 
-#def repass(pas:str, login:str, pas_o:str, pas_n:str)->str:
+def repass(Login:str, password_:str, Logit:str,  pas_o:str, pas_n:str)->bool:
     """
-    Määrme repass...
-    :parem pas str, login str, pas_o str, pas_n str:Järjend repass 
+    Määrme repass Muutuja, mille juurde sisestate esmalt vana parooli ja seejärel uue ning idee kohaselt tuleks asendada.
+    :parem Login str, password_ str, Logit str,  pas_o str, pas_n str:Järjend repass 
     :rtype: str
     """
-   
-    #username = input("Введите имя пользователя: ")
-    #old_password = input("Введите старый пароль: ")
-    #new_password = input("Введите новый пароль: ")
-    #reset_password(logt, pasw, username, old_password, new_password)
+    if  Logit in Login and  pas_o in password_:
+        index = Login.index( Logit)
+        password_[index] = pas_n
+        print(f"Пароль изменен")
 
-    #if login in logt and pas_o in pas:
-    #    index = logt.index(login)
-    #    pas[index] = pas_n
-        
-    #    print("Пароль был изменен.")
      
+   
 
-#def reepasss(passw:int, user:int,logt:int)->str:
-     """
-    Määrme reepasss
-    :parem ppassw:int, user:int,logt:int:Järjend reepasss
+
+def reuser(log_o:str, log_n:str, Login:str)->str:
+   """
+    Määrme repass(Переменная при который вы вписываете сначала старого юзера, а потом нового)
+    :parem log_o str, log_n str, Login str:Järjend repass 
     :rtype: str
-    """
-    #if user in logt:
-    #    index = logt.index(user)
-    #    new_pass = Salasona()
-    #    passw[index] = new_pass
-    #    print(f"Новый пароль для пользователя {user}: {new_pass}")
-    #else:
-    #    print("Пользователь с таким именем не найден.")
+   """
+  
 
-    #return 
+   if log_o in Login:
+        index = Login.index(log_o)
+        Login[index] = log_n
+        print("Имя юзера было изменено.")
+
+
+
+
+
+
+
+
+    #
+def reepasss(password_:int, logit:str, Login:str)->bool:
+    """
+    Määrme reepasss (Переменная меняющая пароль на новый)
+    :parem ppassw:int, user:int,logt:int:Järjend reepasss
+    :rtype: bool
+    """
+    if logit in Login:
+        index = Login.index(logit)
+        pas_n = Salasona()
+        password_[index] = pas_n
+        print(f"Новый пароль {Login}: {pas_n}")
+       
