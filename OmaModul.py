@@ -1,20 +1,23 @@
-from random import *
-#def salasõna(k:int)->bool:
-#    """
-#    Määrme salasõna..
-#    :parem int sala:Järjend salasõna numbridest
-#    :rtype: bool
-#    """
-#    k='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.,:;!_*-+()/#¤%&'
-#    salasõna=''.join(random.choice(k) for x in range(12)) #Выбирает 12 рандомных символов.
-#    return salasõna
+from random import*
+import random
+
+def salasõna()->any:
+    """
+    Määrme salasõna muutuja loomiseks parool 12 sümbolist
+    :parem int sala:Järjend salasõna numbridest
+    :rtype: bool
+    """
+    k='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.,:;!_*-+()/#¤%&'
+    salasõna=''.join(random.choice(k) for _ in range(12))
+    return salasõna
+
 
 
 
 import string
-def Salasona(k: int)->bool:
+def Salasona(k:int)->bool:
     """
-    Määrme salasõna..
+    Määrme salasõna muutuja loomiseks parool 12 sümbolist
     :parem int k:Järjend salasõna numbridest
     :rtype: bool
     """
@@ -29,12 +32,12 @@ def Salasona(k: int)->bool:
 
 def reg(logt:list, pas:str)->bool:
     """
-    Määrme reg..
+    Määrme reg muutuja parooli kontrollimiseks
     :parem logt list, pas str:Järjend salasõna numbridest
     :rtype: bool
     """
-    n=input("Напишите свое имя: ")
-    tehe=int(input("2-Задать свой пароль, 1-сгенерировать его случайным образом\n "))
+    n=input("Kirjutage oma nimi: ")
+    tehe=int(input("2-Määrake oma parool, 1-genereerige see juhuslikult\n "))
 
     if tehe==1:
         salasona=Salasona(12)
@@ -43,13 +46,13 @@ def reg(logt:list, pas:str)->bool:
  
 
     elif tehe==2:
-       pas=input("Напишите свой пароль: ")
+       pas=input("Kirjutage oma parool: ")
        if any(c.islower() for c in pas) and any(c.isupper() for c in pas) and any(c.isdigit() for c in pas) and any(c in '.,:;!_*-+()/#¤%&' for c in pas):
-            print("Вы создали пароль")
+            print("Olete loonud parooli")
             logt.append(n)
             pas.append(str(salasona))
        else:
-            print("Ошибка")
+            print("Viga")
         
        
     return logt,pas
@@ -57,51 +60,41 @@ def reg(logt:list, pas:str)->bool:
 
 
 
-def repass(Login:str, password_:str, Logit:str,  pas_o:str, pas_n:str)->bool:
+def repass(Login:str, password_:str, Logit:str,  pas_o:str, pas_n:str)->str:
     """
-    Määrme repass Muutuja, mille juurde sisestate esmalt vana parooli ja seejärel uue ning idee kohaselt tuleks asendada.
+    Määrme repass muutuja, mille juurde sisestate esmalt vana parooli ja seejärel uue ning idee kohaselt tuleks asendada.
     :parem Login str, password_ str, Logit str,  pas_o str, pas_n str:Järjend repass 
     :rtype: str
     """
     if  Logit in Login and  pas_o in password_:
-        index = Login.index( Logit)
-        password_[index] = pas_n
-        print(f"Пароль изменен")
+        l = Login.index( Logit)
+        password_[l] = pas_n
+        print("Parool muudetud")
 
      
    
 
-
 def reuser(log_o:str, log_n:str, Login:str)->str:
-   """
-    Määrme repass(Переменная при который вы вписываете сначала старого юзера, а потом нового)
-    :parem log_o str, log_n str, Login str:Järjend repass 
-    :rtype: str
-   """
+    """
+#    Määrme repass muutuja, kuhu sisestate kõigepealt vana kasutaja ja seejärel uue
+#    :parem log_o str, log_n str, Login str:Järjend repass 
+#    :rtype: str
+#   """
+    if  log_o in Login:
+        y = Login.index(log_o)
+        Login[y] = log_n
+        print("Kasutajanimi on edukalt muudetud.")
   
 
-   if log_o in Login:
-        index = Login.index(log_o)
-        Login[index] = log_n
-        print("Имя юзера было изменено.")
 
-
-
-
-
-
-
-
-    #
 def reepasss(password_:int, logit:str, Login:str)->bool:
     """
-    Määrme reepasss (Переменная меняющая пароль на новый)
+    Määrme reepasss muutuv parooli muutmine uueks
     :parem ppassw:int, user:int,logt:int:Järjend reepasss
     :rtype: bool
     """
-    if logit in Login:
-        index = Login.index(logit)
-        pas_n = Salasona()
-        password_[index] = pas_n
-        print(f"Новый пароль {Login}: {pas_n}")
-       
+    if logit in Login: 
+        x = Login.index(logit)     
+        pas_n = salasõna()
+        password_[x] = pas_n
+        print(f"Kasutaja parool {logit} on muudetud järgmiselt: {pas_n}")
